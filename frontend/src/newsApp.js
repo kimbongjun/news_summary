@@ -17,7 +17,7 @@ function NewsApp() {
 
   const fetchNews = async () => {
     const response = await axios.get(
-      `http://localhost:8000/api/news/?q=${query}`
+      `${process.env.REACT_APP_API_URL}/api/news/?q=${query}`
     );
     setArticles(response.data);
   };
